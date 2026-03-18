@@ -1,36 +1,345 @@
 ---
-title: 'BioHackEU23 report: Template for the very long title'
-title_short: 'BioHackEU23 #26: unknown chemical substances'
+title: "Towards Federated Learning Across Biobanks: Prototype Software from the 2026 Carnegie Mellon University–NVIDIA Hackathon"
+title_short:
 tags:
-  - cheminformatics
-  - PubChem
-  - unknown chemical substances
+  - biohackathon
+  - computational biology
+  - federated learning
 authors:
-  - name: First Author
+  - name: James Mu
+    orcid: 0009-0008-1598-9292
     affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
+  - name: Aditya Kumar Karna
+    orcid: 0009-0000-0365-5748
     affiliation: 2
-    role: Conceptualization, Writing – review & editing
+  - name: Kumar Koushik Telaprolu
+    orcid: 0009-0006-5026-5201
+    affiliation: 3
+  - name: Jeff Winchell
+    orcid: 0000-0002-7573-9825
+    affiliation: 4
+  - name: Tyler Jay Yang
+    orcid: 0009-0007-6985-9648
+    affiliation: 4
+  - name: Caiwei Maggie Zhang
+    orcid: 0009-0007-5973-5932
+    affiliation: 1
+  - name: Jasmine Baker
+    orcid: 0000-0001-7545-6086
+    affiliation: 5
+  - name: Espen Hagen
+    orcid: 0000-0002-1321-5970
+    affiliation: 6
+  - name: Md Enamul Hoq
+    orcid: 0000-0001-7945-6980
+    affiliation: 7
+  - name: Kyulin Kim
+    orcid: 0009-0007-8976-2405
+    affiliation: 8
+  - name: Konstantinos Koukoutegos
+    orcid: 0000-0003-4392-4476
+    affiliation: 9
+  - name: Peter Lawson
+    orcid: 0000-0001-5106-490X
+    affiliation: 10
+  - name: Chantera Lazard
+    orcid: 0009-0006-1367-3812
+    affiliation: 11
+  - name: Qianqian Liang
+    orcid: 0000-0002-1737-5031
+    affiliation: 12
+  - name: Robert Loughnan
+    orcid: 0000-0003-4870-4501
+    affiliation: 13
+  - name: Diya Patidar
+    orcid: 0009-0007-0238-2363
+    affiliation: 4
+  - name: Chunduru Sri Abhijit
+    orcid: 0009-0001-4108-2888
+    affiliation: 14
+  - name: Vibha Acharya
+    orcid: 0000-0001-6598-0052
+    affiliation: 15
+  - name: Rahaf M. Ahmad
+    orcid: 0000-0002-7531-5264
+    affiliation: 16
+  - name: Anna Boeva
+    orcid: 0009-0005-6169-4960
+    affiliation: 4
+  - name: Jingyao Chen
+    orcid: 0009-0004-5140-343X
+    affiliation: 4
+  - name: Ioannis Christofilogiannis
+    orcid: 0009-0008-5906-0776
+    affiliation: 17
+  - name: Heena Dalal
+    orcid: 0000-0003-1868-1388
+    affiliation: 18
+  - name: Alina Devkota
+    orcid: 0009-0003-9882-1332
+    affiliation: 19
+  - name: Amrit Gaire
+    orcid: 0000-0002-5655-9570
+    affiliation: 20
+  - name: Dhruv Gor
+    orcid: 0009-0002-4087-7758
+    affiliation: 21
+  - name: Aryan Sharan Guda
+    orcid: 0009-0001-7684-9786
+    affiliation: 4
+  - name: Prashnna Gyawali
+    orcid: 0000-0003-1201-6993
+    affiliation: 19
+  - name: Seungjin Han
+    orcid: 0009-0008-0279-5755
+    affiliation: 4
+  - name: Jiahao He
+    orcid: 0009-0000-4977-7900
+    affiliation: 22
+  - name: Yuan-Ting Hsieh
+    orcid: 0009-0002-4123-5634
+    affiliation: 23
+  - name: Mengying Hu
+    orcid: 0000-0003-4827-3051
+    affiliation: 15
+  - name: Peiran Jiang
+    orcid: 0000-0003-1586-7806
+    affiliation: 4
+  - name: Pu Kao
+    orcid: 0009-0003-9047-0160
+    affiliation: 24
+  - name: Adam Kehl
+    orcid: 0009-0009-4160-9182
+    affiliation: 13
+  - name: Arnav Kharbanda
+    orcid: 0009-0007-9195-9960
+    affiliation: 4
+  - name: Yajushi Khurana
+    orcid: 0009-0001-9064-8008
+    affiliation: 15
+  - name: Kushal Koirala
+    orcid: 0009-0009-7935-4533
+    affiliation: 25
+  - name: Sumeet Kothare
+    orcid: 0009-0002-3687-3957
+    affiliation: 4
+  - name: Jędrzej Kubica
+    orcid: 0000-0001-7037-3900
+    affiliation: 26
+  - name: Seohyun Lee
+    orcid: 0009-0000-2289-5827
+    affiliation: 4
+  - name: Zilinghan Li
+    orcid: 0000-0002-0160-2519
+    affiliation: 27
+  - name: Yosen Lin
+    orcid: 0009-0000-3220-3177
+    affiliation: 4
+  - name: Mariona Jaramillo Civill
+    orcid: 0009-0000-0216-2896
+    affiliation: 11
+  - name: William Lu
+    orcid: 0000-0002-2768-1489
+    affiliation: 4
+  - name: Jialan Ma
+    orcid: 0009-0007-2670-9076
+    affiliation: 28
+  - name: Samarpan Mohanty
+    orcid: 0009-0001-1309-7425
+    affiliation: 29
+  - name: Abraham Moller
+    orcid: 0000-0002-7324-8678
+    Institute: 30
+  - name: Derek Mu
+    orcid: 0009-0008-6594-1254
+    affiliation: 4
+  - name: Bhanvi Paliwal
+    orcid: 0009-0009-2727-2667
+    affiliation: 4
+  - name: Shreyan Nalwadiya
+    orcid: 0009-0005-3645-6901
+    affiliation: 4
+  - name: Shreya Nandakumar
+    orcid: 0009-0006-9230-3659
+    affiliation: 4
+  - name: Hieu Ngo
+    orcid: 0000-0003-2595-2166
+    affiliation: 31
+  - name: Isha Parikh
+    orcid: 0009-0009-7887-7922
+    affiliation: 32
+  - name: Zillur Rahman
+    orcid: 0000-0002-7770-9830
+    affiliation: 6
+  - name: Arunannamalai Sujatha Bharath Raj
+    orcid: 0009-0000-5008-5899
+    affiliation: 4
+  - name: Nikita Rajesh
+    orcid: 0009-0009-9850-5261
+    affiliation: 4
+  - name: Ushta Samal
+    orcid: 0009-0004-2395-4955
+    affiliation: 4
+  - name: Srikant Sarangi
+    orcid: 0000-0003-4441-4582
+    affiliation: 33
+  - name: Andrew Scouten
+    orcid: 0009-0004-6418-7158
+    affiliation: 43
+  - name: Aastha Shah
+    orcid: 0009-0008-7811-0177
+    affiliation: 35
+  - name: Sanjnaa Sridhar
+    orcid: 0009-0006-3142-5679
+    affiliation: 4
+  - name: Suratha Sriram
+    orcid: 0009-0009-1248-830X
+    affiliation: 4
+  - name: Mrunali Abhijit Thokadiwala
+    orcid: 0009-0008-9567-832X
+    affiliation: 36
+  - name: Jacob Thrasher
+    orcid: 0009-0007-2484-9112
+    affiliation: 19
+  - name: Jeffrey Wang
+    orcid: 0009-0000-3112-9577
+    affiliation: 4
+  - name: Shivank Sadasivan
+    orcid: 0009-0004-4699-2129
+    affiliation: 4
+  - name: Yiman Wu
+    orcid: 0009-0005-0000-8242
+    affiliation: 4
+  - name: Zhenghao Xiao
+    orcid: 0009-0003-4285-1815
+    affiliation: 4
+  - name: Qiyu Yang
+    orcid: 0009-0009-6173-4052
+    affiliation: 4
+  - name: Zhaoyi You
+    orcid: 0009-0003-9281-641X
+    affiliation: 4
+  - name: Jiayi Zhao
+    orcid: 0009-0008-2597-6196
+    affiliation:
+  - name: Jiayan Zhou
+    orcid: 0000-0001-5974-087X
+    affiliation: 37
+  - name: Zheqian Zhu
+    orcid: 0009-0005-3160-5461
+    affiliation: 4
+  - name: Pravesh Parekh
+    orcid: 0000-0002-1930-1167
+    affiliation: 13
+  - name: Pravesh Parekh
+    orcid: 0000-0002-1930-1167
+    affiliation: 6
+  - name: Huajin Wang
+    orcid: 0000-0003-0121-4257
+    affiliation: 4
+  - name: Melanie Gainey
+    orcid: 0000-0002-4782-9647
+    affiliation: 4
+  - name: Sean Davis
+    orcid: 0000-0002-8991-6458
+    affiliation: 38
+  - name: Beryl Rabindran
+    orcid: 0000-0002-2937-7798
+    affiliation: 39
+  - name: Holger R. Roth
+    orcid: 0000-0002-3662-8743
+    affiliation: 23
+  - name: Ben Busby
+    orcid: 0000-0001-5267-4988
+    affiliation: 23
 affiliations:
-  - name: First Affiliation
+  - name: Duke University
     index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
+  - name: Springfield College
     index: 2
-date: 8 November 2023
+  - name: Assurant
+    index: 3
+  - name: Carnegie Mellon University
+    index: 4
+  - name: Baylor College of Medicine
+    index: 5
+  - name: University of Oslo and Oslo University Hospital
+    index: 6
+  - name: University of Arkansas for Medical Sciences
+    index: 7
+  - name: University College London
+    index: 8
+  - name: Indiana University
+    index: 9
+  - name: Johns Hopkins University
+    index: 10
+  - name: Northeastern University
+    index: 11
+  - name: Geisinger
+    index: 12
+  - name: J. Craig Venter Institute
+    index: 13
+  - name: University of Massachusetts Amherst
+    index: 14
+  - name: University of Pittsburgh
+    index: 15
+  - name: Department of Genetics and Genomics, College of Medicine and Health Sciences, United Arab Emirates University, UAE
+    index: 16
+  - name: Trinity College Dublin
+    index: 17
+  - name: Kings College London
+    index: 18
+  - name: West Virginia University
+    index: 19
+  - name: University of Minnesota Twin Cities
+    index: 20
+  - name: Queen’s University
+    index: 21
+  - name: University of Cambridge
+    index: 22
+  - name: NVIDIA
+    index: 23
+  - name: National Taiwan University
+    index: 24
+  - name: University of North Carolina
+    index: 25
+  - name: University Grenoble Alpes
+    index: 26
+  - name: Argonne National Laboratory
+    index: 27
+  - name: Broad Institute of MIT and Harvard
+    index: 28
+  - name: University of Nebraska-Lincoln
+    index: 29
+  - name: Center for Alzheimer’s and Related Dementias (CARD), National Institute on Aging (NIA)
+    index: 30
+  - name: Yeshiva University
+    index: 31
+  - name: Mount Sinai Health System
+    index: 32
+  - name: Paradigm4
+    index: 33
+  - name: Texas State University
+    index: 34
+  - name: Queens University Belfast
+    index: 35
+  - name: University of California, San Francisco
+    index: 36
+  - name: Stanford University School of Medicine
+    index: 37
+  - name: University of Colorado Anschutz School of Medicine
+    index: 38
+  - name: AWS
+    index: 39
+date: 7-9 January 2026
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
-# URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/huajinw/biohackathon_preprint_2026/blob/main/paper/paper.md
-# This is the short authors description that is used at the
-# bottom of the generated paper (typically the first two authors):
-authors_short: First Author \emph{et al.}
+event: Pittsburgh2026
+biohackathon_name: CMU-NVIDIA Federated Learning Hackathon for Biomedical Applications
+biohackathon_url: https://guides.library.cmu.edu/hackathon
+biohackathon_location: Pittsburgh, PA, 2026
+group: Collaborative Bioinformatics
+git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
+authors_short: Ma J. \emph{et al.}
 ---
 
 # 1. Introduction
@@ -135,7 +444,7 @@ FedProFit combines pre-trained protein language models from NVIDIA BioNeMo [@Bio
 
 To ensure the Federated Learning (FL) framework implemented in this task was evaluated against representative and biologically plausible data, we generated synthetic datasets for 10 distinct sites using the LDAK software v6.1 [@speed2020ldak].
 
-**Phenotypic Architecture:** The simulated phenotype was modeled after Parkinson’s disease (PD) case-control status. To reflect the epidemiological reality of elderly populations, we established a disease prevalence of $1\\%$. The trait’s genetic architecture was defined on a liability scale with a SNP heritability of $h^2 \= 0.25$. For each site, we designated 20 causal variants, with effect sizes determined by the LDAK-Thin model using a power parameter of $-0.25$.
+**Phenotypic Architecture:** The simulated phenotype was modeled after Parkinson’s disease (PD) case-control status. To reflect the epidemiological reality of elderly populations, we established a disease prevalence of $1\\%$. The trait’s genetic architecture was defined on a liability scale with a SNP heritability of $h^2 = 0.25$. For each site, we designated 20 causal variants, with effect sizes determined by the LDAK-Thin model using a power parameter of $-0.25$.
 
 **Genotypic Parameters and Site Heterogeneity:** To simulate the technical and demographic heterogeneity often encountered in multi-center studies, we introduced the following variations across the 10 sites: sample size ranged from 88,000 to 110,000 individuals per site; variant density varied between 450,000 and 520,000 SNPs per site; and Minor Allele Frequencies (MAF) were drawn from a uniform distribution between $0.01$ and $0.5$. A realistic LD structure was generated internally via LDAK to ensure the synthetic genomes maintained biological integrity.
 
