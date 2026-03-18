@@ -471,7 +471,7 @@ To explicitly account for between-site heterogeneity, we also incorporated a var
 
 ## 2.2 FedPathHarmony: Domain Harmonization for Federated Histopathology
 
-**Patch Based Histopathology:** The CAMELYON17 dataset [@litjens1399HEstainedSentinel2018] comprises 1,300 hematoxylin and eosin (H&E)–stained sentinel lymph node whole-slide images (WSIs) from breast cancer patients. We utilized a patch-based variant of CAMELYON17, CAMELYON17-WRDS [@kohWILDSBenchmarkIntheWild2021], which comprises approximately 450,000 patches of size 96 × 96 pixels extracted from the WSIs. Each WSI was manually annotated by pathologists to delineate tumor regions, and the resulting segmentation masks were used to assign binary labels (tumor or non-tumor) to each patch.
+**Patch Based Histopathology:** The CAMELYON17 dataset [@litjens1399HEstainedSentinel2018] comprises 1,300 hematoxylin and eosin (H&E)–stained sentinel lymph node whole-slide images (WSIs) from breast cancer patients. We utilized a patch-based variant of CAMELYON17, CAMELYON17-WRDS [@kohWILDSBenchmarkIntheWild2021], which comprises approximately 450,000 patches of size $96 \times 96$ pixels extracted from the WSIs. Each WSI was manually annotated by pathologists to delineate tumor regions, and the resulting segmentation masks were used to assign binary labels (tumor or non-tumor) to each patch.
 
 **Biobank Proxy:** The CAMELYON17 dataset includes whole slide images from five pathology centers: RadboudUMC, UMCU, Erasmus MC, UMCG and the Institute Jules Bordet. To create a realistic federated setup, the dataset was partitioned among 5 clients based on the hospitals from which they were sourced.
 
@@ -479,7 +479,7 @@ To explicitly account for between-site heterogeneity, we also incorporated a var
 
 **Experimental Setup and Federated Models:** To overcome the undesirable non-biological variances and acquisition differences from each node while preserving data privacy, we utilized FedHarmony to conduct adaptive and tractable harmonization processes via the NVFlare platform. Images from different clients presented heterogeneous appearances due to differing stains. Inside each client, data were partitioned into a train (80%) and validation (20%) split following [@jiang2022harmofl].
 
-Two federated models were evaluated. Federated Averaging (FedAvg) was used first as a baseline naive harmonization, where site-level color differences were not deliberately managed and model weights were periodically averaged across centers. Our second approach, Beer–Lambert Stain Normalization, specifically addressed stain variability. Patches were first stain-normalized to reduce inter-center variability before local models were trained and aggregated using FedAvg in NVFlare. A DenseNet convolutional neural network was leveraged for binary image classification. The network accepted RGB image patches with an input resolution of 96 × 96 pixels (3 × 96 × 96) and produced predictions over the two output classes.
+Two federated models were evaluated. Federated Averaging (FedAvg) was used first as a baseline naive harmonization, where site-level color differences were not deliberately managed and model weights were periodically averaged across centers. Our second approach, Beer–Lambert Stain Normalization, specifically addressed stain variability. Patches were first stain-normalized to reduce inter-center variability before local models were trained and aggregated using FedAvg in NVFlare. A DenseNet convolutional neural network was leveraged for binary image classification. The network accepted RGB image patches with an input resolution of $96 \times 96$ pixels ($3 \times 96 \times 96$) and produced predictions over the two output classes.
 
 ## 2.3 FedViz: Auditing Federated Readiness Across Biobank Consortia
 
@@ -756,7 +756,7 @@ The resulting matrix was stored in compressed sparse row (CSR) format. Associate
 
 ### 2.8.4 PGS-Level Representation Learning
 
-To derive compact representations of polygenic risk scores, dimensionality reduction techniques were applied to the PGS × locus matrix. Both singular value decomposition and autoencoder-based models were explored. Models were trained using explicit train/test splits and evaluated using reconstruction loss and cosine distance metrics in the original feature space.
+To derive compact representations of polygenic risk scores, dimensionality reduction techniques were applied to the PGS $\times$ locus matrix. Both singular value decomposition and autoencoder-based models were explored. Models were trained using explicit train/test splits and evaluated using reconstruction loss and cosine distance metrics in the original feature space.
 
 Each PGS was mapped to a low-dimensional latent vector intended to capture ancestry-specific genetic architecture, disease-related signal, and overlap structure across scores.
 
@@ -899,15 +899,15 @@ Furthermore, confusion matrix distributions indicated that CanPath contributed t
 
 We successfully constructed chromosome 19 pangenome graphs using PGGB and compared the resulting structures to publicly available Human Pangenome Reference Consortium (HPRC) graphs. Our constructed graphs recapitulate the major structural features present in the HPRC pangenomes while allowing flexible subsampling and cohort-specific graph construction, demonstrating the feasibility of building comparable pangenome representations in a federated setting. In addition, we implemented a generalized mini-graph extraction framework that enables locus-specific pangenome construction at arbitrary genomic regions. This approach provides a foundation for future work on mini-graph–based uniqueness hashing, enabling compact, privacy-preserving representations of local genomic background that could be shared across biobanks without exposing raw sequence data.
 
-![][image17]**Figure 3.4-1: Sequence Tube Map Visualization of the APOE Gene Region Highlighting the rs429358 (APOE ε4) Variant**
+![][image17]**Figure 3.4-1: Sequence Tube Map Visualization of the APOE Gene Region Highlighting the rs429358 (APOE $\epsilon$4) Variant**
 
 This figure presents a Sequence Tube Map visualization of the pangenome graph in the APOE (Apolipoprotein E) gene region on Chromosome 19, serving as a clinically relevant validation of the federated graph's ability to capture medically important variants.
 
 The graph is displayed as a linear sequence of nodes connected by edges. Each rectangular node represents a DNA segment labeled with its node ID and sequence content. The backbone flows left to right, with nodes like 9586:CGGCTGGGCGCGGACATGGAGGACGTGTGCGG representing long shared sequence segments present in all haplotypes.
 
-The red box highlights the critical region containing the rs429358 single nucleotide polymorphism (SNP) , one of the two SNPs that define the APOE isoforms (ε2, ε3, and ε4). At node 9587:C, the graph branches into two alternative paths: node 9589:C (representing the APOE ε3 reference allele) and node 9588:T (representing the APOE ε4 risk allele). These paths reconverge at node 9590:GCCTGGTGCAGT..., forming a classic bubble structure in the variation graph, the canonical representation of a biallelic SNP.
+The red box highlights the critical region containing the rs429358 single nucleotide polymorphism (SNP) , one of the two SNPs that define the APOE isoforms ($\epsilon$2, $\epsilon$3, and $\epsilon$4). At node 9587:C, the graph branches into two alternative paths: node 9589:C (representing the APOE $\epsilon$3 reference allele) and node 9588:T (representing the APOE $\epsilon$4 risk allele). These paths reconverge at node 9590:GCCTGGTGCAGT..., forming a classic bubble structure in the variation graph, the canonical representation of a biallelic SNP.
 
-The APOE ε4 allele is the strongest common genetic risk factor for late-onset Alzheimer's disease, with heterozygous carriers having approximately 3× increased risk and homozygous carriers having up to 12× increased risk. The fact that our federated pangenome graph correctly resolves this variant with the proper bubble topology, correct alleles (C vs. T), and accurate flanking sequence context demonstrates that the federated construction approach preserves clinically actionable variant resolution even when genome assemblies are distributed across independent sites and never centralized.
+The APOE $\epsilon$4 allele is the strongest common genetic risk factor for late-onset Alzheimer's disease, with heterozygous carriers having approximately $3\times$ increased risk and homozygous carriers having up to $12\times$ increased risk. The fact that our federated pangenome graph correctly resolves this variant with the proper bubble topology, correct alleles (C vs. T), and accurate flanking sequence context demonstrates that the federated construction approach preserves clinically actionable variant resolution even when genome assemblies are distributed across independent sites and never centralized.
 
 This validates that the Omnigenome pipeline can serve as a foundation for privacy-preserving pharmacogenomic and disease-risk analyses across federated biobank networks.
 
@@ -919,7 +919,7 @@ Nodes: Graph Iteration 1 contains 952,688 nodes compared to the HPRC's 3,021,157
 
 Edges: A similar pattern holds for edges: 1,376,746 (Iteration 1) vs. 4,214,675 (HPRC), a ratio of 32.7%. The edge-to-node ratio is nearly identical in both graphs (~1.44 for Iteration 1 vs. ~1.39 for HPRC), confirming that the federated graph maintains consistent topological density regardless of scale.
 
-Paths: Graph Iteration 1 has 10 paths (representing 5 diploid samples, 2 haplotypes each) vs. the HPRC's 1,072 paths. This 107× difference in path count directly reflects the sample size gap and is the primary driver of the absolute metric differences.
+Paths: Graph Iteration 1 has 10 paths (representing 5 diploid samples, 2 haplotypes each) vs. the HPRC's 1,072 paths. This $107\times$ difference in path count directly reflects the sample size gap and is the primary driver of the absolute metric differences.
 
 Samples: 5 vs. 46  the fundamental input difference between the two graphs.
 
@@ -1058,25 +1058,25 @@ Analysis of the co-occurrence matrix revealed three pathway pairs with large eff
 
 | Pathway Pair | Observed | Expected | OR | 95% CI | Jaccard |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| Mito × Excito | 1,769 | 789.9 | 38.78 | 33.23–45.27 | 0.678 |
-| Proteo × Excito | 1,821 | 1,233.8 | 9.63 | 8.28–11.21 | 0.471 |
-| Vesicle × DNA | 627 | 272.4 | 6.94 | 5.98–8.06 | 0.306 |
-| Proteo × Mito | 1,844 | 1,406.8 | 4.00 | 3.55–4.50 | 0.446 |
-| Proteo × Vesicle | 421 | 1,038.4 | 0.11 | 0.10–0.13 | 0.085 |
+| Mito $\times$ Excito | 1,769 | 789.9 | 38.78 | 33.23–45.27 | 0.678 |
+| Proteo $\times$ Excito | 1,821 | 1,233.8 | 9.63 | 8.28–11.21 | 0.471 |
+| Vesicle $\times$ DNA | 627 | 272.4 | 6.94 | 5.98–8.06 | 0.306 |
+| Proteo $\times$ Mito | 1,844 | 1,406.8 | 4.00 | 3.55–4.50 | 0.446 |
+| Proteo $\times$ Vesicle | 421 | 1,038.4 | 0.11 | 0.10–0.13 | 0.085 |
 
-**Table 3.6-3: Pathway Co-occurrence Statistics.** Observed = observed co-occurrence count; Expected = expected count under independence; OR = odds ratio; CI = confidence interval; Jaccard = Jaccard similarity index. Mito = Mitochondrial; Excito = Excitotoxicity; Proteo = Proteostasis. The Proteostasis × Vesicle Trafficking pair demonstrates significant negative association (OR < 1)
+**Table 3.6-3: Pathway Co-occurrence Statistics.** Observed = observed co-occurrence count; Expected = expected count under independence; OR = odds ratio; CI = confidence interval; Jaccard = Jaccard similarity index. Mito = Mitochondrial; Excito = Excitotoxicity; Proteo = Proteostasis. The Proteostasis $\times$ Vesicle Trafficking pair demonstrates significant negative association (OR < 1)
 
 The Proteostasis-Vesicle Trafficking pair demonstrated marked mutual exclusivity (OR = 0.11, *p* < 10−285), with only 421 patients exhibiting both pathways against an expected count of 1,038.4. This pattern suggests that proteostasis-driven and vesicle trafficking-driven disease represent distinct molecular aetiologies.
 
 #### **Pathway Burden Score Correlations**
 
-Comparison of Spearman rank and Pearson product-moment correlations confirmed the approximately linear nature of pathway relationships. Across all 21 pathway pairs, the maximum absolute difference between ρ and *r* was 0.035, validating Pearson correlation for dose-dependent inference (Figure 3.6-3).
+Comparison of Spearman rank and Pearson product-moment correlations confirmed the approximately linear nature of pathway relationships. Across all 21 pathway pairs, the maximum absolute difference between $\rho$ and *r* was 0.035, validating Pearson correlation for dose-dependent inference (Figure 3.6-3).
 
 ![][image27]
 
-**Figure 3.6-3. Pearson correlation matrix for pathway burden scores.** Heatmap displaying pairwise Pearson correlation coefficients between pathway burden scores across all 6,043 carriers. Blue indicates positive correlation; red indicates negative correlation. The Mitochondrial-Excitotoxicity pair demonstrates the strongest positive correlation (r = 0.687). Bold values indicate |r| ≥ 0.4
+**Figure 3.6-3. Pearson correlation matrix for pathway burden scores.** Heatmap displaying pairwise Pearson correlation coefficients between pathway burden scores across all 6,043 carriers. Blue indicates positive correlation; red indicates negative correlation. The Mitochondrial-Excitotoxicity pair demonstrates the strongest positive correlation (r = 0.687). Bold values indicate |r| $\ge$ 0.4
 
-The Mitochondrial-Excitotoxicity pair demonstrated the highest correlation (Spearman ρ = 0.704, Pearson *r* = 0.687), indicating a dose-dependent relationship. The Proteostasis-Vesicle Trafficking pair demonstrated the strongest negative correlation (*r* = −0.408), supporting the existence of distinct molecular subtypes.
+The Mitochondrial-Excitotoxicity pair demonstrated the highest correlation (Spearman $\rho$ = 0.704, Pearson *r* = 0.687), indicating a dose-dependent relationship. The Proteostasis-Vesicle Trafficking pair demonstrated the strongest negative correlation (*r* = −0.408), supporting the existence of distinct molecular subtypes.
 
 #### **Biological Classification of Pathway Relationships**
 
@@ -1088,9 +1088,9 @@ Application of the quadrant classification scheme based on co-occurrence frequen
 
 #### **Cross-Cluster Statistical Comparison**
 
-Kruskal-Wallis tests revealed significant differences in pathway burden scores across clusters for all seven pathways (Figure 3.6-5). Excitotoxicity demonstrated the largest effect size (*H* = 975.30, ε2 = 0.161), followed by Proteostasis (ε2 = 0.140) and RNA Metabolism (ε2 = 0.072).![][image29]
+Kruskal-Wallis tests revealed significant differences in pathway burden scores across clusters for all seven pathways (Figure 3.6-5). Excitotoxicity demonstrated the largest effect size (*H* = 975.30, $\epsilon$2 = 0.161), followed by Proteostasis ($\epsilon$2 = 0.140) and RNA Metabolism ($\epsilon$2 = 0.072).![][image29]
 
-**Figure 3.6-5: Cross-cluster effect sizes for pathway distributions.** A) Epsilon-squared (ε²) effect sizes from Kruskal-Wallis tests comparing pathway burden scores across clusters. Dashed lines indicate thresholds for large (ε² ≥ 0.14) and medium (ε² ≥ 0.06) effects. B) Cohen's h effect sizes for prevalence differences between Cluster 0 (Mild) and Cluster 2 (Severe). Colours indicate effect size category: red = large, orange = medium, blue = small
+**Figure 3.6-5: Cross-cluster effect sizes for pathway distributions.** A) Epsilon-squared ($\epsilon$²) effect sizes from Kruskal-Wallis tests comparing pathway burden scores across clusters. Dashed lines indicate thresholds for large ($\epsilon$² $\ge$ 0.14) and medium ($\epsilon$² $\ge$ 0.06) effects. B) Cohen's h effect sizes for prevalence differences between Cluster 0 (Mild) and Cluster 2 (Severe). Colours indicate effect size category: red = large, orange = medium, blue = small
 
 Five pathways demonstrated monotonic trends across the severity gradient. Proteostasis exhibited increasing prevalence with severity (Cohen's *h* = 2.046), as did RNA Metabolism (*h* = 1.090). Conversely, Vesicle Trafficking (*h* = 0.728) and DNA Damage (*h* = 0.773) demonstrated decreasing prevalence with increasing severity.
 
@@ -1168,7 +1168,7 @@ We developed PRS Locus Viewer, an interactive Dash-based application for visuali
 
 ### 3.8.3 Federated Representation Learning Reveals Ancestry-Specific and Shared Genetic Architecture
 
-We implemented a federated representation learning framework to characterize polygenic risk score (PGS) architecture across ancestries without requiring individual-level genotype data. After harmonizing heterogeneous PGS Catalog scoring files and defining canonical loci (locus_id = *hm_chr:hm_pos*), we constructed a sparse PGS × locus matrix with normalized effect sizes and enriched each locus with functional annotations.
+We implemented a federated representation learning framework to characterize polygenic risk score (PGS) architecture across ancestries without requiring individual-level genotype data. After harmonizing heterogeneous PGS Catalog scoring files and defining canonical loci (locus_id = *hm_chr:hm_pos*), we constructed a sparse PGS $\times$ locus matrix with normalized effect sizes and enriched each locus with functional annotations.
 
 At the PGS level, an autoencoder learned compact embeddings summarizing how each score distributes genetic risk across loci. Dimensionality reduction (PCA/UMAP) demonstrated clear clustering by ancestry, even among PGS derived for the same disease, indicating population-specific genetic architectures (Figure 3.8-4). Cosine similarity heatmaps further showed higher similarity among PGS trained within similar ancestral groups, supporting the capacity of the embeddings to capture biologically meaningful structure (Figure 3.8-5).
 
