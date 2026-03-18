@@ -899,7 +899,8 @@ Furthermore, confusion matrix distributions indicated that CanPath contributed t
 
 We successfully constructed chromosome 19 pangenome graphs using PGGB and compared the resulting structures to publicly available Human Pangenome Reference Consortium (HPRC) graphs. Our constructed graphs recapitulate the major structural features present in the HPRC pangenomes while allowing flexible subsampling and cohort-specific graph construction, demonstrating the feasibility of building comparable pangenome representations in a federated setting. In addition, we implemented a generalized mini-graph extraction framework that enables locus-specific pangenome construction at arbitrary genomic regions. This approach provides a foundation for future work on mini-graph–based uniqueness hashing, enabling compact, privacy-preserving representations of local genomic background that could be shared across biobanks without exposing raw sequence data.
 
-![][image17]**Figure 3.4-1: Sequence Tube Map Visualization of the APOE Gene Region Highlighting the rs429358 (APOE $\epsilon$4) Variant**
+![][image17]
+**Figure 3.4-1: Sequence Tube Map Visualization of the APOE Gene Region Highlighting the rs429358 (APOE $\epsilon4$) Variant**
 
 This figure presents a Sequence Tube Map visualization of the pangenome graph in the APOE (Apolipoprotein E) gene region on Chromosome 19, serving as a clinically relevant validation of the federated graph's ability to capture medically important variants.
 
