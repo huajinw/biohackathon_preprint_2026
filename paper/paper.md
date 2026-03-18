@@ -762,7 +762,7 @@ Each PGS was mapped to a low-dimensional latent vector intended to capture ances
 
 ### 2.8.5 Variant-Level Representation Learning
 
-To investigate locus-level structure, the matrix representation was transposed such that each variant was represented as a vector of its effects across all PGSs. Formally, each variant $i$ was represented as $\text{Variant_\i} = [w_{i1}, w_{i2}, \ldots, w_{iB}]$, where $w_{ij}$ denotes the effect size of variant $i$ within PGS $j$.
+To investigate locus-level structure, the matrix representation was transposed such that each variant was represented as a vector of its effects across all PGSs. Formally, each variant $i$ was represented as $\text{Variant\_i} = [w_{i1}, w_{i2}, \ldots, w_{iB}]$, where $w_{ij}$ denotes the effect size of variant $i$ within PGS $j$.
 
 An autoencoder model was trained on these variant-level vectors to produce low-dimensional embeddings summarizing how each locus behaves across multiple polygenic scores. Variants were optionally filtered by minimum support criteria, requiring presence in multiple PGSs to emphasize cross-cohort signals.
 
