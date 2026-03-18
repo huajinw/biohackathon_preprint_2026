@@ -452,7 +452,7 @@ To ensure the Federated Learning (FL) framework implemented in this task was eva
 
 The FL framework for our task was implemented using a centralized server-client architecture, orchestrated via the NVIDIA FLARE (NVFlare 2.7.1) SDK as illustrated in Figure 2.1-1. This setup was designed to facilitate high-performance genomic analysis while maintaining strict data localization.
 
-![Figure 2.1-1](./Figures/Figure2.1-1.svg
+![Figure 2.1-1](./Figures/Figure2.1-1.svg)
 **Figure 2.1-1:** A centralized server-client architecture orchestrated via the NVIDIA FLARE A) Illustration of FedGen's FL infrastructure, and B) generation and distribution of synthesized genotypes and phenotypes for training local models.
 
 **Infrastructure and Server Orchestration:** The central coordinator was deployed on an Amazon Web Services (AWS) instance. To ensure robust dependency isolation and environmental stability, the server was managed within a dedicated Python virtual environment to oversee the synchronization of federated rounds across all participating sites.
@@ -538,7 +538,8 @@ The final Megagraph (Figure 2.4-2, highlighted in orange at the bottom) represen
 
 We developed a comprehensive federated learning pipeline for privacy-preserving ancestry prediction using chromosome-specific haploblock features (Figure 2.5-1). The system was implemented in Python 3.8+ as a standalone, reproducible workflow orchestrating multiple genomic analysis tools and machine learning frameworks. The pipeline automatically downloads chromosome-specific data from the 1000 Genomes Project Phase 3, including phased VCF files, reference sequences, and population metadata, alongside high-resolution recombination maps from the Science.org aau1043_datas3 dataset. Haploblock boundaries were defined directly from recombination interval data without threshold-based segmentation, ensuring objective genomic partitioning. For each haploblock region, we extracted phased consensus sequences using bcftools and custom Python scripts, leveraging multi-threading across all computational steps including VCF processing, sequence alignment, and clustering operations. The feature engineering module constructs binary genomic hash representations or cluster assignment matrices from haploblock sequences, with explicit handling of missing values and numerical stability checks to prevent NaN propagation during subsequent machine learning steps. Data partitioning for federated learning follows ancestry group stratification (EUR, AFR, EAS), creating isolated training datasets at virtual "sites" while maintaining a centralized validation set, simulating a realistic privacy-preserving distributed learning scenario.
 
-![Figure 2.5-1](./Figures/Figure2.5-1.png)**Figure 2.5-1**: Federated Learning Pipeline for Privacy-Preserving Ancestry Prediction
+![Figure 2.5-1](./Figures/Figure2.5-1.png)
+**Figure 2.5-1**: Federated Learning Pipeline for Privacy-Preserving Ancestry Prediction
 
 ## 2.6 RAIDers: Federated Rare Disease Subtyping
 
@@ -682,7 +683,8 @@ The primary data source is the TCGA-BRCA STAR TPM expression matrix accessed fro
 
 Following this common preprocessing stage, additional data preparation steps are applied depending on the modeling track used within the OncoLearn framework. Where the distinction between preprocess pipelines can be attributed to the team's large size.
 
-![Figure 2.7-1](./Figures/Figure2.7-1.png)**Figure 2.7-1**: EDA Visualization of Combined Datasets
+![Figure 2.7-1](./Figures/Figure2.7-1.png)
+**Figure 2.7-1**: EDA Visualization of Combined Datasets
 
 #### 2.7.1.1 ML and Transformer-Based Baseline
 
@@ -835,7 +837,8 @@ Our FL framework successfully aggregated the GWAS results across all 10 sites, w
 ![Figure 3.1-1](./Figures/Figure3.1-1.png)
 **Figure 3.1-1**: Aggregation of GWAS results across 10 sites. Manhattan plot from meta-analysis of 10 client sites' GWAS summary statistics.  
 
-![Figure 3.1-2](./Figures/Figure3.1-2.png)**Figure 3.1-2**: Aggregation of GWAS results across 10 sites. GWAS QQ plot from meta-analysis of 10 client sites' GWAS summary statistics.
+![Figure 3.1-2](./Figures/Figure3.1-2.png)
+**Figure 3.1-2**: Aggregation of GWAS results across 10 sites. GWAS QQ plot from meta-analysis of 10 client sites' GWAS summary statistics.
 
 ### Impact on Genomic Research Capabilities
 
@@ -860,7 +863,8 @@ Performance was comparable for both FedAvg (AUCROC: 0.9977) and the harmonized f
 
 Harmonization was validated on five example images, one from each simulated biobank (see Figure 3.2-1), pre and post-training.
 
-![Figure 3.2-1](./Figures/Figure3.2-1.png)**Figure 3.2-1**: Results of harmonization of histopathology patches. Representative patch images are shown for each client, corresponding to an individual proxy biobank (hospital center). Images are displayed as original, harmonized but untrained, and harmonized forms.
+![Figure 3.2-1](./Figures/Figure3.2-1.png)
+**Figure 3.2-1**: Results of harmonization of histopathology patches. Representative patch images are shown for each client, corresponding to an individual proxy biobank (hospital center). Images are displayed as original, harmonized but untrained, and harmonized forms.
 
 ## 3.3 FedViz: Auditing Federated Readiness Across Biobank Consortia
 
@@ -919,7 +923,8 @@ Branch Nodes: Iteration 1 has 341,937 branch nodes (degree > 2) compared to HPRC
 
 The key takeaway is that the federated pipeline achieves disproportionate structural coverage relative to its sample input. The graph topology (edge/node ratio, branch ratio, mean degree) is preserved across scales, suggesting the architecture supports efficient iterative convergence as more sites and samples are added in subsequent rounds.
 
-![Figure 3.4-3](./Figures/3.4-3.png)**Figure 3.4-3**: Cumulative Node Length Distribution with N50 and N90 Thresholds.
+![Figure 3.4-3](./Figures/3.4-3.png)
+**Figure 3.4-3**: Cumulative Node Length Distribution with N50 and N90 Thresholds.
 
 This figure shows the cumulative sequence length as a function of node rank (sorted by length in descending order) for both Graph Iteration 1 (gold) and the fully converged HPRC graph (green), with the N50 (red dashed line at 50%) and N90 (orange dashed line at 90%) thresholds marked.
 
@@ -954,7 +959,6 @@ The key insight from this radar chart is that the quality metrics (mean degree, 
 For this study, we tested the pipeline on several representative haploblocks from chromosome 6 to validate the federated learning approach (Figure 3.5-1). The automated workflow begins with a comprehensive dependency verification phase to ensure system tools like samtools and bcftools are present alongside essential Python libraries such as TensorFlow and XGBoost. Once the environment has been verified, the system proceeds to repository cloning and data acquisition, immediately followed by integrity checks to ensure data consistency. The core processing starts with the generation of haploblock boundaries from recombination maps, which informs the subsequent extraction of phased sequences and the building of consensus sequences. These sequences are then processed through clustering and hash generation to construct the primary feature matrix. In the final stages, the pipeline performs federated data partitioning using stratified train-validation splits, typically at an 80:20 ratio. This enables parallel model training where XGBoost and deep neural networks---featuring a 256-128-64 architecture with batch normalization---train independently on ancestry-specific subsets such as EUR, AFR, and EAS. The process concludes with the federated averaging of model parameters, which are weighted based on local sample sizes. Throughout the execution, users maintain control via configuration flags that allow for disabling specific components, reusing existing data, or performing dry-run dependency audits. The system outputs trained global models, per-site performance metrics, validation predictions, confusion matrices, and execution logs to a structured workspace directory, with all numerical operations implementing safeguards against gradient explosion and NaN contamination through gradient clipping (clipnorm=1.0) and explicit nan_to_num conversion at data loading and aggregation steps. Full details could be found at [https://github.com/collaborativebioinformatics/Med_SNP_Deconvolution](https://github.com/collaborativebioinformatics/Med_SNP_Deconvolution)
 
 ![Figure 3.5-1](./Figures/Figure3.5-1.png)
-
 **Figure 3.5-1**: An illustration of the data flow using chromosome 6 in the analysis.
 
 We evaluated multiple federated learning strategies across different data distribution scenarios to assess their performance on various classification metrics (Table 3.5-1, Figures 3.5-2, and 3.5-3). Our results showed that the choice of aggregation strategy and data heterogeneity significantly influenced model performance.
@@ -997,7 +1001,6 @@ Federated K-means clustering with *K* = 5 converged after 23 iterations across t
 **Table 3.6-1**. Cluster Characteristics from Federated K-means Clustering. Mean severity represents the average composite severity score within each cluster. Modal progression indicates the most frequent predicted disease progression category. % Modal represents the proportion of patients assigned to the modal progression category. N/A = not applicable
 
 ![Figure 3.6-1](./Figures/Figure3.6-1.png)
-
 **Figure 3.6-1**. Severity Score and Progression Distribution by Cluster.
 A) Mean composite severity score for each disease cluster, demonstrating monotonic increase from Cluster 0 (Mild) through Cluster 2 (Severe). B) Distribution of predicted disease progression rates within each cluster. Error bars omitted for clarity.
 
@@ -1027,7 +1030,7 @@ Notable pleiotropic genes included *SOD1* (Proteostasis, Mitochondrial, Excitoto
 | DNA Damage | 4 | NEK1, C21orf2, SETX, SPG11 |
 | Excitotoxicity | 4 | UNC13A, DAO, (+ pleiotropy) |
 
-**Table 3.6-2: Gene-pathway mapping summary.** Number of genes assigned to each pathway and representative genes. Some genes exhibit pleiotropic involvement in multiple pathways
+**Table 3.6-2**: Gene-pathway mapping summary. Number of genes assigned to each pathway and representative genes. Some genes exhibit pleiotropic involvement in multiple pathways.
 
 **Overall Pathway Burden Distribution**
 
@@ -1037,7 +1040,8 @@ Among the 6,043 carriers, the mean number of pathways affected per patient was 2
 
 Pathway prevalence demonstrated marked heterogeneity across clusters, with distinct molecular signatures characterising each disease stratum (Figure 3.6-2). In Cluster 0 (Mild), Vesicle Trafficking was the predominant pathway (45.7%), followed by DNA Damage (42.0%); notably, Proteostasis, RNA Metabolism, Cytoskeletal/Axonal Transport, and Excitotoxicity were absent. Cluster 1 (Moderate-A) exhibited high Proteostasis (64.6%) alongside Excitotoxicity (50.4%) and Mitochondrial involvement (46.9%). Cluster 2 (Severe) demonstrated the highest Proteostasis prevalence (72.9%) and elevated RNA Metabolism (26.9%).
 
-![Figure 3.6-2](./Figures/Figure3.6-2.png)**Figure 3.6-2**: Pathway Prevalence Heatmap by Disease Cluster. Heatmap displaying the percentage of carrier patients within each cluster exhibiting disruption in each of the seven molecular pathways. Colour intensity corresponds to prevalence (0--80%). Values shown within cells represent exact percentages.
+![Figure 3.6-2](./Figures/Figure3.6-2.png)
+**Figure 3.6-2**: Pathway Prevalence Heatmap by Disease Cluster. Heatmap displaying the percentage of carrier patients within each cluster exhibiting disruption in each of the seven molecular pathways. Colour intensity corresponds to prevalence (0--80%). Values shown within cells represent exact percentages.
 
 The distinction between Clusters 1 and 4, both classified within the moderate severity stratum, was particularly striking. Cluster 1 exhibited markedly higher Proteostasis (64.6% versus 24.7%), Mitochondrial (46.9% versus 12.0%), and Excitotoxicity (50.4% versus 8.4%) prevalence compared to Cluster 4, whereas Cluster 4 demonstrated elevated Cytoskeletal/Axonal Transport involvement (12.0% versus 4.3%) and retained higher Vesicle Trafficking (32.3% versus 34.3%). These divergent pathway profiles within the same severity category provide direct evidence for molecular heterogeneity within clinical severity strata.
 
@@ -1061,7 +1065,8 @@ The Proteostasis-Vesicle Trafficking pair demonstrated marked mutual exclusivity
 
 Comparison of Spearman rank and Pearson product-moment correlations confirmed the approximately linear nature of pathway relationships. Across all 21 pathway pairs, the maximum absolute difference between $\rho$ and *r* was 0.035, validating Pearson correlation for dose-dependent inference (Figure 3.6-3).
 
-![Figure 3.6-3](./Figures/Figure3.6-3.png)**Figure 3.6-3**. Pearson correlation matrix for pathway burden scores. Heatmap displaying pairwise Pearson correlation coefficients between pathway burden scores across all 6,043 carriers. Blue indicates positive correlation; red indicates negative correlation. The Mitochondrial-Excitotoxicity pair demonstrates the strongest positive correlation (r = 0.687). Bold values indicate |r| $\ge$ 0.4
+![Figure 3.6-3](./Figures/Figure3.6-3.png)
+**Figure 3.6-3**. Pearson correlation matrix for pathway burden scores. Heatmap displaying pairwise Pearson correlation coefficients between pathway burden scores across all 6,043 carriers. Blue indicates positive correlation; red indicates negative correlation. The Mitochondrial-Excitotoxicity pair demonstrates the strongest positive correlation (r = 0.687). Bold values indicate |r| $\ge$ 0.4
 
 The Mitochondrial-Excitotoxicity pair demonstrated the highest correlation (Spearman $\rho$ = 0.704, Pearson *r* = 0.687), indicating a dose-dependent relationship. The Proteostasis-Vesicle Trafficking pair demonstrated the strongest negative correlation (*r* = -0.408), supporting the existence of distinct molecular subtypes.
 
@@ -1069,13 +1074,15 @@ The Mitochondrial-Excitotoxicity pair demonstrated the highest correlation (Spea
 
 Application of the quadrant classification scheme based on co-occurrence frequency and correlation strength yielded three biologically interpretable relationship categories (Figure 3.6-4). The Mitochondrial-Excitotoxicity pair fulfilled dose-dependent criteria (co-occurrence 86.5%, *r* = 0.687), indicating cascading molecular failure. The RNA Metabolism-Mitochondrial pair fulfilled threshold effect criteria (co-occurrence 60.4%, *r* = 0.214). The Proteostasis-Vesicle Trafficking pair fulfilled distinct subtype criteria (co-occurrence 24.4%, *r* = -0.408).
 
-![Figure 3.6-4](./Figures/Figure3.6-4.png)**Figure 3.6-4**: Quadrant Classification of Pathway Relationships.Scatter plot of pathway pairs positioned by co-occurrence percentage (x-axis) and Pearson correlation (y-axis). Dashed lines indicate classification boundaries. Green = dose-dependent (co-occ >50%, r >0.5); orange = threshold effect (co-occ >50%, |r| <0.3); red = distinct subtypes (co-occ <30%, r <-0.3); grey = other. Shaded regions indicate classification quadrants.
+![Figure 3.6-4](./Figures/Figure3.6-4.png)
+**Figure 3.6-4**: Quadrant Classification of Pathway Relationships.Scatter plot of pathway pairs positioned by co-occurrence percentage (x-axis) and Pearson correlation (y-axis). Dashed lines indicate classification boundaries. Green = dose-dependent (co-occ >50%, r >0.5); orange = threshold effect (co-occ >50%, |r| <0.3); red = distinct subtypes (co-occ <30%, r <-0.3); grey = other. Shaded regions indicate classification quadrants.
 
 **Cross-Cluster Statistical Comparison**
 
 Kruskal-Wallis tests revealed significant differences in pathway burden scores across clusters for all seven pathways (Figure 3.6-5). Excitotoxicity demonstrated the largest effect size (*H* = 975.30, $\epsilon2$ = 0.161), followed by Proteostasis ($\epsilon2$ = 0.140) and RNA Metabolism ($\epsilon2$ = 0.072).![][image29]
 
-![Figure 3.6-5](./Figures/Figure3.6-5.png)**Figure 3.6-5**: Cross-cluster effect sizes for pathway distributions. A) Epsilon-squared ($\epsilon$^2) effect sizes from Kruskal-Wallis tests comparing pathway burden scores across clusters. Dashed lines indicate thresholds for large ($\epsilon^2$ $\ge$ 0.14) and medium ($\epsilon^2$ $\ge$ 0.06) effects. B) Cohen's h effect sizes for prevalence differences between Cluster 0 (Mild) and Cluster 2 (Severe). Colours indicate effect size category: red = large, orange = medium, blue = small
+![Figure 3.6-5](./Figures/Figure3.6-5.png)
+**Figure 3.6-5**: Cross-cluster effect sizes for pathway distributions. A) Epsilon-squared ($\epsilon$^2) effect sizes from Kruskal-Wallis tests comparing pathway burden scores across clusters. Dashed lines indicate thresholds for large ($\epsilon^2$ $\ge$ 0.14) and medium ($\epsilon^2$ $\ge$ 0.06) effects. B) Cohen's h effect sizes for prevalence differences between Cluster 0 (Mild) and Cluster 2 (Severe). Colours indicate effect size category: red = large, orange = medium, blue = small
 
 Five pathways demonstrated monotonic trends across the severity gradient. Proteostasis exhibited increasing prevalence with severity (Cohen's *h* = 2.046), as did RNA Metabolism (*h* = 1.090). Conversely, Vesicle Trafficking (*h* = 0.728) and DNA Damage (*h* = 0.773) demonstrated decreasing prevalence with increasing severity.
 
@@ -1083,7 +1090,8 @@ Five pathways demonstrated monotonic trends across the severity gradient. Proteo
 
 Network representation of pathway relationships revealed the structural organisation of molecular pathway interactions in ALS (Figure 3.6-6). Proteostasis occupied the largest node position reflecting its 60.3% prevalence. The Mitochondrial-Excitotoxicity edge (green) represented the sole dose-dependent relationship, while the Proteostasis-Vesicle Trafficking edge (red) highlighted the mutual exclusivity characteristic of distinct molecular subtypes.
 
-![Figure 3.6-6](./Figures/Figure3.6-6.png)**Figure 3.6-6**: Pathway Co-occurrence Network. Network diagram displaying relationships between the seven molecular pathways. Node size is proportional to pathway prevalence. Edge thickness is proportional to log-transformed co-occurrence count. Edge colours indicate biological classification: green = dose-dependent; orange = threshold effect; red = distinct subtypes; grey = other relationships.
+![Figure 3.6-6](./Figures/Figure3.6-6.png)
+**Figure 3.6-6**: Pathway Co-occurrence Network. Network diagram displaying relationships between the seven molecular pathways. Node size is proportional to pathway prevalence. Edge thickness is proportional to log-transformed co-occurrence count. Edge colours indicate biological classification: green = dose-dependent; orange = threshold effect; red = distinct subtypes; grey = other relationships.
 
 **Summary of Principal Findings**
 
@@ -1095,8 +1103,8 @@ The integrated Phase 1 and Phase 2 analyses yielded five principal findings. Fir
 
 Baseline experiments compared classical machine learning models and transfer learning approaches using TCGA-BRCA gene expression profiles (19,062 genes) shown in Figure 3.7-1. Logistic regression trained directly on standardized gene expression features achieved the highest test accuracy (88.44%), followed closely by the multilayer perceptron (86.93%). In contrast, transfer learning using BulkRNABert embeddings produced lower performance, with logistic regression and random forest classifiers achieving 78.39% and 74.87% accuracy, respectively.
 
-![][image31]  
-**Figure 3.7-1: Test Accuracy Comparison Between Classifiers**
+![Figure 3.7-1](./Figures/Figure3.7-1.png)
+**Figure 3.7-1**: Test Accuracy Comparison Between Classifiers.
 
 ### 3.7.2 Federated Classical Learning (Gradient Boosting)
 
@@ -1104,10 +1112,11 @@ The federated XGBoost pipeline demonstrated strong classification performance ac
 
 Feature importance analysis of the aggregated model revealed biologically meaningful gene signals associated with subtype discrimination (Figure 3.7-3). The most influential predictors, measured by average gain importance across training rounds, included CDC20, MLPH, XBP1, and BIRC5, followed by MYB, ERBB2, and ESR1. Overall, the federated gradient boosting framework produced robust predictive performance while preserving distributed data ownership across institutions.
 
-![][image32]  
-**Figure 3.7-2: Federated XGBoost Training Performance by Site**  
-![][image33]  
-**Figure 3.7-3: Federated XGBoost Gene Importance**
+![Figure 3.7-2](./Figures/Figure3.7-2.png)
+**Figure 3.7-2**: Federated XGBoost Training Performance by Site.
+
+![Figure 3.7-3](./Figures/Figure3.7-3.png)
+**Figure 3.7-3**: Federated XGBoost Gene Importance.
 
 ### 3.7.3 Federated Multimodal Foundation Model
 
@@ -1131,13 +1140,11 @@ The total number of SNPs per PRS ranged from 578 to 30,745. While some models in
 
 To quantify structural similarity, we computed SNP-level and gene-level overlaps using UpSet visualization (Figure 3.8-1, Figure 3.8-2). Despite targeting the same phenotype, SNP overlap across PRS was limited: the pairwise overlap among three models are 10 to 248, and only 5 variants were shared across all models. In contrast, gene-level overlap was substantially higher, with 378-4791 genes shared across two models and 80 genes were shared across all three models. This suggests that while variant selection differs markedly across studies, higher-level biological convergence may exist at the gene or locus level.
 
-![][image34]
+![Figure 3.8-1](./Figures/Figure3.8-1.png)
+**Figure 3.8-1**: UpSet plot of SNP Overlap Across Three Polygenic Risk Scores.
 
-**Figure 3.8-1: UpSet plot of SNP Overlap Across Three Polygenic Risk Scores**
-
-**![][image35]**
-
-**Figure 3.8-2: UpSet plot of Gene Overlap Across Three Polygenic Risk Scores**
+![Figure 3.8-2](./Figures/Figure3.8-2.png)
+**Figure 3.8-2**: UpSet plot of Gene Overlap Across Three Polygenic Risk Scores.
 
 These findings demonstrate that phenotype-specific PRS models are structurally heterogeneous at the SNP level but exhibit partial convergence when aggregated to gene resolution. This structural divergence underscores the need for harmonized frameworks when comparing or aggregating PRS across studies.
 
@@ -1145,9 +1152,8 @@ These findings demonstrate that phenotype-specific PRS models are structurally h
 
 We developed PRS Locus Viewer, an interactive Dash-based application for visualizing polygenic risk score (PRS) variants in their genomic context (Figure 3.8-3). The tool accepts harmonized PGS scoring files (requiring *hm_chr*, *hm_pos*, *effect_weight*, and *rsID*) and dynamically renders SNP effect sizes across a selected chromosome. It supports side-by-side comparison of multiple PRS models, with heatmap-style visualization of effect magnitudes and automatic gene annotation within a configurable window (default +/-25kb). Users can search by rsID or gene symbol to zoom into specific loci, enabling targeted inspection of regional concordance and discordance across models. While not designed to generate quantitative metrics, this tool provides a scalable framework for structured locus-level interrogation and complements downstream structural and representation-based analyses.
 
-![][image36]
-
-**Figure 3.8-3: Interactive PRS Locus Score Viewer**
+![Figure 3.8-3](./Figures/Figure3.8-3.png)
+**Figure 3.8-3**: Interactive PRS Locus Score Viewer.
 
 ### 3.8.3 Federated Representation Learning Reveals Ancestry-Specific and Shared Genetic Architecture
 
@@ -1155,31 +1161,25 @@ We implemented a federated representation learning framework to characterize pol
 
 At the PGS level, an autoencoder learned compact embeddings summarizing how each score distributes genetic risk across loci. Dimensionality reduction (PCA/UMAP) demonstrated clear clustering by ancestry, even among PGS derived for the same disease, indicating population-specific genetic architectures (Figure 3.8-4). Cosine similarity heatmaps further showed higher similarity among PGS trained within similar ancestral groups, supporting the capacity of the embeddings to capture biologically meaningful structure (Figure 3.8-5).
 
-![][image37]
+![Figure 3.8-4](./Figures/Figure3.8-4.png)
+**Figure 3.8-4**: PCA of Polygenic Risk Score Embeddings Stratified by Ancestry and Disease Label.
 
-**Figure 3.8-4: PCA of Polygenic Risk Score Embeddings Stratified by Ancestry and Disease Label**
-
-![][image38]
-
-**Figure 3.8-5: Normalized Cosine Distance Heatmap Across 10 Polygenic Risk Scores**
+![Figure 3.8-5](./Figures/Figure3.8-5.png)
+**Figure 3.8-5**: Normalized Cosine Distance Heatmap Across 10 Polygenic Risk Scores.
 
 At the variant level, we transposed the matrix and trained a second autoencoder treating each locus as a vector across PGS. The resulting locus embeddings (Figures 3.8-6, 3.8-7, 3.8-8, 3.8-9) stratified variants by cross-ancestry sharing patterns. Widely shared variants exhibited structured dispersion in latent space, consistent with conserved but quantitatively variable effects across populations, whereas ancestry-enriched variants occupied distinct regions, reflecting population-specific signals.
 
-![][image39]
+![Figure 3.8-6](./Figures/Figure3.8-6.png)
+**Figure 3.8-6**: PCA plot of Variant Embeddings Stratified by Gene Region.
 
-**Figure 3.8-6: PCA plot of Variant Embeddings Stratified by Gene Region**
+![Figure 3.8-7](./Figures/Figure3.8.7.png)
+**Figure 3.8-7**: PCA plot of Variant Embeddings Stratified by Mutation Type.
 
-![][image40]
+![Figure 3.8-8](./Figures/Figure3.8.8.png)
+**Figure 3.8-8**: PCA Plot of Variant Embeddings Stratified by Primary Ancestry.
 
-**Figure 3.8-7: PCA plot of Variant Embeddings Stratified by Mutation Type**
-
-![][image41]
-
-**Figure 3.8-8: PCA Plot of Variant Embeddings Stratified by Primary Ancestry**
-
-![][image42]
-
-**Figure 3.8-9: PCA Plot of Variant Embeddings Stratified by Ancestry Counts**
+![Figure 3.8-9](./Figures/Figure3.8.9.png)
+**Figure 3.8-9**: PCA Plot of Variant Embeddings Stratified by Ancestry Counts.
 
 Together, these results demonstrate that representation learning can recover interpretable ancestry- and trait-associated structure directly from scoring files. Framed under a federated perspective, each PGS acts as a client, with shared loci behaving as global parameters and ancestry-specific variants functioning as client-private signals. This approach enables scalable, privacy-preserving characterization of cross-population genetic architecture without pooling individual-level data.
 
@@ -1319,6 +1319,6 @@ If you or your colleagues are interested in collaborating on these or similar pr
 
 We thank NVIDIA, AWS, and Carnegie Mellon University Libraries for organizing this event. NVIDIA and AWS provided cloud computing resources -- special thanks to Iris Chen and the brev.dev team. Maria Fassinger, Sphia Sadek, Ayush Tripathi, Christian Chicas, and Beryl Rabindran provided support with AWS services and AWS Open Data. Tom Hughes provided logistical support. Sean Davis and Nicholas Cooley helped with team organization and mentorship. Many biobank representatives helped in the planning for this event. We'd specifically like to thank the Nordic Biobank, CHoP Biobank, Chilean Biobank, CanPath, UKBiobank, H3 Africa and others not listed here. We also thank Dan DeBlasio, Gauri Joshi, Sean Davis, and Beryl Rabindran for serving as judges.
 
-**Grant Funding:** Jedrzej Kubica is supported by the France 2030 state funding managed by the National Research Agency with the reference "ANR-22-PEPRSN-0013". Pravesh Parekh is supported by the National Institutes of Health grants U24DA041123 and U24DA055330 and by Wellcome Leap, CARE Program ("FEMA-AD").
+**Grant Funding:** Jędrzej Kubica is supported by the France 2030 state funding managed by the National Research Agency with the reference "ANR-22-PEPRSN-0013". Pravesh Parekh is supported by the National Institutes of Health grants U24DA041123 and U24DA055330 and by Wellcome Leap, CARE Program ("FEMA-AD").
 
 # 7. References
