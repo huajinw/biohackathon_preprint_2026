@@ -253,84 +253,82 @@ authors:
     orcid: 0000-0001-5267-4988
     affiliation: 23
 affiliations:
-  - name: Duke University
-    index: 1
-  - name: Springfield College
-    index: 2
-  - name: Assurant
-    index: 3
-  - name: Carnegie Mellon University
-    index: 4
-  - name: Baylor College of Medicine
-    index: 5
-  - name: University of Oslo and Oslo University Hospital
-    index: 6
-  - name: University of Arkansas for Medical Sciences
-    index: 7
-  - name: University College London
-    index: 8
-  - name: Indiana University
-    index: 9
-  - name: Johns Hopkins University
-    index: 10
-  - name: Northeastern University
-    index: 11
-  - name: Geisinger
-    index: 12
-  - name: J. Craig Venter Institute
-    index: 13
-  - name: University of Massachusetts Amherst
-    index: 14
-  - name: University of Pittsburgh
-    index: 15
-  - name: Department of Genetics and Genomics, College of Medicine and Health Sciences, United Arab Emirates University, UAE
-    index: 16
-  - name: Trinity College Dublin
-    index: 17
-  - name: Kings College London
-    index: 18
-  - name: West Virginia University
-    index: 19
-  - name: University of Minnesota Twin Cities
-    index: 20
-  - name: Queen's University
-    index: 21
-  - name: University of Cambridge
-    index: 22
-  - name: NVIDIA
-    index: 23
-  - name: National Taiwan University
-    index: 24
-  - name: University of North Carolina
-    index: 25
-  - name: University Grenoble Alpes
-    index: 26
-  - name: Argonne National Laboratory
-    index: 27
-  - name: Broad Institute of MIT and Harvard
-    index: 28
-  - name: University of Nebraska-Lincoln
-    index: 29
-  - name: Center for Alzheimer's and Related Dementias (CARD), National Institute on Aging (NIA)
-    index: 30
-  - name: Yeshiva University
-    index: 31
-  - name: Mount Sinai Health System
-    index: 32
-  - name: Paradigm4
-    index: 33
-  - name: Texas State University
-    index: 34
-  - name: Queens University Belfast
-    index: 35
-  - name: University of California, San Francisco
-    index: 36
-  - name: Stanford University School of Medicine
-    index: 37
-  - name: University of Colorado Anschutz School of Medicine
-    index: 38
-  - name: AWS
-    index: 39
+  - name:	Duke University
+    index: 1	
+  - name:	Springfield College
+    index: 2	
+  - name:	Assurant
+    index: 3	
+  - name:	Carnegie Mellon University
+    index: 4	
+  - name:	Baylor College of Medicine
+    index: 5	
+  - name:	University of Oslo and Oslo University Hospital, Norway
+    index: 6	
+  - name:	University of Arkansas for Medical Sciences
+    index: 7	
+  - name:	University College London, England
+    index: 8	
+  - name:	Indiana University
+    index: 9	
+  - name:	Johns Hopkins University
+    index: 10	
+  - name:	Northeastern University
+    index: 11	
+  - name:	Geisinger
+    index: 12	
+  - name:	J. Craig Venter Institute
+    index: 13	
+  - name:	University of Massachusetts Amherst
+    index: 14	
+  - name:	University of Pittsburgh
+    index: 15	
+  - name:	United Arab Emirates University, UAE
+    index: 16	
+  - name:	Trinity College Dublin, Ireland
+    index: 17	
+  - name:	Kings College London, England
+    index: 18	
+  - name:	West Virginia University
+    index: 19	
+  - name:	University of Minnesota Twin Cities
+    index: 20	
+  - name:	Queen’s University Belfast, Northern Ireland
+    index: 21	
+  - name:	University of Cambridge, England
+    index: 22	
+  - name:	NVIDIA
+    index: 23	
+  - name:	National Taiwan University, Taiwan
+    index: 24	
+  - name:	University of North Carolina
+    index: 25	
+  - name:	University Grenoble Alpes, France
+    index: 26	
+  - name:	Argonne National Laboratory
+    index: 27	
+  - name:	Broad Institute of MIT and Harvard
+    index: 28	
+  - name:	University of Nebraska-Lincoln
+    index: 29	
+  - name:	Center for Alzheimer’s and Related Dementias (CARD), National Institute on Aging (NIA)
+    index: 30	
+  - name:	Yeshiva University
+    index: 31	
+  - name:	Mount Sinai Health System
+    index: 32	
+  - name:	Paradigm4
+    index: 33	
+  - name:	Texas State University
+    index: 34	
+  - name:	University of California, San Francisco
+    index: 35	
+  - name:	Stanford University School of Medicine
+    index: 36	
+  - name:	University of Colorado Anschutz School of Medicine
+    index: 37	
+  - name:	AWS
+    index: 38	
 date: 7-9 January 2026
 cito-bibliography: paper.bib
 event: Pittsburgh2026
@@ -338,8 +336,8 @@ biohackathon_name: CMU-NVIDIA Federated Learning Hackathon for Biomedical Applic
 biohackathon_url: https://guides.library.cmu.edu/hackathon
 biohackathon_location: Pittsburgh, PA, 2026
 group: Collaborative Bioinformatics
-git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
-authors_short: Ma J. \emph{et al.}
+git_url: https://github.com/huajinw/biohackathon_preprint_2026.git
+authors_short: Mu J. \emph{et al.}
 ---
 
 # 1. Introduction
