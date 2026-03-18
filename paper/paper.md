@@ -69,6 +69,9 @@ authors:
   - name: Jingyao Chen
     orcid: 0009-0004-5140-343X
     affiliation: 4
+  - name: Mariona Jaramillo Civill
+    orcid: 0009-0000-0216-2896
+    affiliation: 11
   - name: Ioannis Christofilogiannis
     orcid: 0009-0008-5906-0776
     affiliation: 17
@@ -123,7 +126,7 @@ authors:
   - name: Sumeet Kothare
     orcid: 0009-0002-3687-3957
     affiliation: 4
-  - name: Jedrzej Kubica
+  - name: Jędrzej Kubica
     orcid: 0000-0001-7037-3900
     affiliation: 26
   - name: Seohyun Lee
@@ -135,9 +138,6 @@ authors:
   - name: Yosen Lin
     orcid: 0009-0000-3220-3177
     affiliation: 4
-  - name: Mariona Jaramillo Civill
-    orcid: 0009-0000-0216-2896
-    affiliation: 11
   - name: William Lu
     orcid: 0000-0002-2768-1489
     affiliation: 4
@@ -149,12 +149,9 @@ authors:
     affiliation: 29
   - name: Abraham Moller
     orcid: 0000-0002-7324-8678
-    Institute: 30
+    affiliation: 30
   - name: Derek Mu
     orcid: 0009-0008-6594-1254
-    affiliation: 4
-  - name: Bhanvi Paliwal
-    orcid: 0009-0009-2727-2667
     affiliation: 4
   - name: Shreyan Nalwadiya
     orcid: 0009-0005-3645-6901
@@ -165,6 +162,9 @@ authors:
   - name: Hieu Ngo
     orcid: 0000-0003-2595-2166
     affiliation: 31
+  - name: Bhanvi Paliwal
+    orcid: 0009-0009-2727-2667
+    affiliation: 4
   - name: Isha Parikh
     orcid: 0009-0009-7887-7922
     affiliation: 32
@@ -176,6 +176,9 @@ authors:
     affiliation: 4
   - name: Nikita Rajesh
     orcid: 0009-0009-9850-5261
+    affiliation: 4
+  - name: Shivank Sadasivan
+    orcid: 0009-0004-4699-2129
     affiliation: 4
   - name: Ushta Samal
     orcid: 0009-0004-2395-4955
@@ -204,9 +207,6 @@ authors:
   - name: Jeffrey Wang
     orcid: 0009-0000-3112-9577
     affiliation: 4
-  - name: Shivank Sadasivan
-    orcid: 0009-0004-4699-2129
-    affiliation: 4
   - name: Yiman Wu
     orcid: 0009-0005-0000-8242
     affiliation: 4
@@ -221,7 +221,7 @@ authors:
     affiliation: 4
   - name: Jiayi Zhao
     orcid: 0009-0008-2597-6196
-    affiliation:
+    affiliation: 4
   - name: Jiayan Zhou
     orcid: 0000-0001-5974-087X
     affiliation: 37
