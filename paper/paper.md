@@ -332,11 +332,11 @@ affiliations:
 date: 7-9 January 2026
 cito-bibliography: paper.bib
 event: Pittsburgh2026
-biohackathon_name: CMU-NVIDIA Federated Learning Hackathon for Biomedical Applications
+biohackathon_name: CMU-NVIDIA Federated Learning Hackathon
 biohackathon_url: https://guides.library.cmu.edu/hackathon
 biohackathon_location: Pittsburgh, PA, 2026
 group: Collaborative Bioinformatics
-git_url: https://github.com/huajinw/biohackathon_preprint_2026.git
+git_url: https://github.com/collaborativebioinformatics
 authors_short: Mu J. \emph{et al.}
 ---
 
