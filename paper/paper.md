@@ -188,10 +188,10 @@ authors:
     affiliation: 33
   - name: Andrew Scouten
     orcid: 0009-0004-6418-7158
-    affiliation: 43
+    affiliation: 34
   - name: Aastha Shah
     orcid: 0009-0008-7811-0177
-    affiliation: 35
+    affiliation: 21
   - name: Sanjnaa Sridhar
     orcid: 0009-0006-3142-5679
     affiliation: 4
@@ -200,7 +200,7 @@ authors:
     affiliation: 4
   - name: Mrunali Abhijit Thokadiwala
     orcid: 0009-0008-9567-832X
-    affiliation: 36
+    affiliation: 35
   - name: Jacob Thrasher
     orcid: 0009-0007-2484-9112
     affiliation: 19
@@ -224,16 +224,13 @@ authors:
     affiliation: 4
   - name: Jiayan Zhou
     orcid: 0000-0001-5974-087X
-    affiliation: 37
+    affiliation: 36
   - name: Zheqian Zhu
     orcid: 0009-0005-3160-5461
     affiliation: 4
   - name: Pravesh Parekh
     orcid: 0000-0002-1930-1167
-    affiliation: 13
-  - name: Pravesh Parekh
-    orcid: 0000-0002-1930-1167
-    affiliation: 6
+    affiliation: [6, 13]
   - name: Huajin Wang
     orcid: 0000-0003-0121-4257
     affiliation: 4
@@ -242,10 +239,10 @@ authors:
     affiliation: 4
   - name: Sean Davis
     orcid: 0000-0002-8991-6458
-    affiliation: 38
+    affiliation: 37
   - name: Beryl Rabindran
     orcid: 0000-0002-2937-7798
-    affiliation: 39
+    affiliation: 38
   - name: Holger R. Roth
     orcid: 0000-0002-3662-8743
     affiliation: 23
@@ -835,9 +832,9 @@ To ensure privacy-preserving aggregation of GWAS summary statistics, only summar
 Our FL framework successfully aggregated the GWAS results across all 10 sites, wherein the meta-analysis increased the effective sample size to ~1 million individuals (Figure 3.1-1, Figure 3.1-2). Heterogeneity statistics ($I^2$ and Cochran's Q) quantified consistency of genetic effects across sites. Genome-wide significant associations were detected that would not have reached significance in single-site analyses.
 
 ![Figure 3.1-1](./Figures/Figure3.1-1.png)
-**Figure 3.1-1**: Aggregation of GWAS results across 10 sites. Manhattan plot from meta-analysis of 10 client sites' GWAS summary statistics.  
+**Figure 3.1-1**: Aggregation of GWAS results across 10 sites. Manhattan plot from meta-analysis of 10 client sites' GWAS summary statistics.
 
-![Figure 3.1-2](./Figures/Figure3.1-2.png)
+![Figure 3.1-2](./Figures/Figure3.1-2.png)\
 **Figure 3.1-2**: Aggregation of GWAS results across 10 sites. GWAS QQ plot from meta-analysis of 10 client sites' GWAS summary statistics.
 
 ### Impact on Genomic Research Capabilities
@@ -863,7 +860,7 @@ Performance was comparable for both FedAvg (AUCROC: 0.9977) and the harmonized f
 
 Harmonization was validated on five example images, one from each simulated biobank (see Figure 3.2-1), pre and post-training.
 
-![Figure 3.2-1](./Figures/Figure3.2-1.png)
+![Figure 3.2-1](./Figures/Figure3.2-1.png)\
 **Figure 3.2-1**: Results of harmonization of histopathology patches. Representative patch images are shown for each client, corresponding to an individual proxy biobank (hospital center). Images are displayed as original, harmonized but untrained, and harmonized forms.
 
 ## 3.3 FedViz: Auditing Federated Readiness Across Biobank Consortia
@@ -1288,7 +1285,7 @@ Several directions for future work are promising. First, systematic hyperparamet
 
 Each participating team aims to deploy FedProFit within their secure infrastructures to train on proprietary biobanks and genomic repositories---ranging from human clinical variant databases to viral surveillance archives---without ever exposing sensitive raw sequences. This enables institutions to validate fitness predictions against real-world phenotypic data held in strict privacy, effectively bridging the gap between computational scoring and clinical or epidemiological observations.
 
-# 5. Data and Software Availability**
+# 5. Data and Software Availability
 
 All code and required software stacks are provided in the following GitHub repositories, which may include additional links to data repositories and Jupyter Notebooks.
 
