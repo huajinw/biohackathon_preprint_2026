@@ -230,7 +230,7 @@ authors:
     affiliation: 4
   - name: Pravesh Parekh
     orcid: 0000-0002-1930-1167
-    affiliation: [6, 13]
+    affiliation: "6, 13"
   - name: Huajin Wang
     orcid: 0000-0003-0121-4257
     affiliation: 4
