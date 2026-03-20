@@ -375,7 +375,7 @@ Pangenome graphs that capture genetic variation across populations can unlock mo
 
 Currently, no existing methods enable distributed institutions to collaboratively construct unified pangenome graphs while maintaining data sovereignty, forcing researchers to choose between comprehensiveness and privacy.
 
-Omnigenome develops federated pangemone construction using HPRC data as a proof-of-concept, alongside federated genomic hashing for APOE-locus association studies to demonstrate privacy-preserving pattern matching capabilities without exposure of raw sequences. We validate this approach on 1000 Genomes Project data for chromosome 19 GWAS focused on variants with Alzheimer's disease risk [@Wightman2021-hk; @Sabata2025Hackathon]. NVIDIA FLARE's client-side privacy filters ensure that only graph structure updates and hashed representations traverse the federated platform.
+Omnigenome develops federated pangenome construction using HPRC data as a proof-of-concept, alongside federated genomic hashing for APOE-locus association studies to demonstrate privacy-preserving pattern matching capabilities without exposure of raw sequences. We validate this approach on 1000 Genomes Project data for chromosome 19 GWAS focused on variants with Alzheimer's disease risk [@Wightman2021-hk; @Sabata2025Hackathon]. NVIDIA FLARE's client-side privacy filters ensure that only graph structure updates and hashed representations traverse the federated platform.
 
 ## 1.5 Med_SNP_Deconvolution: Privacy-Preserving Ancestry Inference
 
@@ -397,7 +397,7 @@ RAIDers address these gaps in ALS by integrating 480 pathogenic variants into a 
 
 ## 1.7 OncoLearn: Federated Cancer Subtyping with Multi-Omic Data
 
-The biological foundations of tumorigenesis are highly heterogeneous, requiring the integration of large-scale, multi-instutional clinical and transcriptomic data to identify nuanced molecular subtypes. Accurate subtyping is important for precision oncology, yet the high dimensionality of RNA-seq data makes it difficult to train robust models on the limited, localized cohorts available to individual clinical research sites.
+The biological foundations of tumorigenesis are highly heterogeneous, requiring the integration of large-scale, multi-institutional clinical and transcriptomic data to identify nuanced molecular subtypes. Accurate subtyping is important for precision oncology, yet the high dimensionality of RNA-seq data makes it difficult to train robust models on the limited, localized cohorts available to individual clinical research sites.
 
 Current centralized training of multi-omic models is heavily restricted by patient privacy regulations and the logistical challenge of aggregating sensitive genetic datasets. Conventional frameworks struggle with non-standard molecular variations, and models trained on single-site cohorts rarely generalize well across the diverse genetic backgrounds of global populations.
 
